@@ -1,0 +1,36 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ],
+      "route": "user"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "users",
+      "databaseName": "AdCaleAzure",
+      "collectionName": "Users",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outusers",
+      "databaseName": "AdCaleAzure",
+      "collectionName": "Users",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
